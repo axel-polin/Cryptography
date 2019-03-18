@@ -1,0 +1,65 @@
+
+|> 1- Create master directory like that : 
+   mkdir /path/to/pqpcs_conf_dir/pqpcs_conf_dir
+
+|> 2- Create ./pqpcs_conf_dir/main directory
+
+|> 3- Create PQPCS.desktop and move into user applications directory like this :
+   echo "[Desktop Entry]" > $HOME/PQPCS.desktop
+   echo "Version=1.0" >> $HOME/PQPCS.desktop
+   echo "Type=Application" >> $HOME/PQPCS.desktop
+   echo "Name=PQPCS" >> $HOME/PQPCS.desktop
+   echo "Comment=Pseudo Quantic Cryptographic System launcher" >> $HOME/PQPCS.desktop
+   echo "Exec=/path/to/conf_dir/main/pqpcs.sh" >> $HOME/PQPCS.desktop
+   echo "Icon=" >> $HOME/PQPCS.desktop
+   echo "Path=" >> $HOME/PQPCS.desktop
+   echo "Terminal=true" >> $HOME/PQPCS.desktop
+   echo "StartupNotify=false" >> $HOME/PQPCS.desktop
+   echo "Categories=System;" >> $HOME/PQPCS.desktop
+   mv $HOME/PQPCS.desktop [your user apps directory]
+
+|> 4- Create PQPCS-proxy.desktop and move into user application directory like this :
+   echo "[Desktop Entry]" > $HOME/PQPCS-proxy.desktop
+   echo "Version=1.0" >> $HOME/PQPCS-proxy.desktop
+   echo "Type=Application" >> $HOME/PQPCS-proxy.desktop
+   echo "Name=PQPCS-proxy">> $HOME/PQPCS-proxy.desktop
+   echo "Comment=Pseudo Quantic Cryptographic System proxy launcher" >> $HOME/PQPCS-proxy.desktop
+   echo "Exec=$choice0/main/pqp_proxy" >> $HOME/PQPCS-proxy.desktop
+   echo "Icon=" >> $HOME/PQPCS-proxy.desktop
+   echo "Path=" >> $HOME/PQPCS-proxy.desktop
+   echo "Terminal=true" >> $HOME/PQPCS-proxy.desktop
+   echo "StartupNotify=false" >> $HOME/PQPCS-proxy.desktop
+   echo "Categories=System;" >> $HOME/PQPCS-proxy.desktop
+   mv $HOME/PQPCS-proxy.desktop [your user apps directory]
+
+|> 5- Install bsd development libraries for your distribution or O.S
+
+|> 6- Compiling source code like that :
+cd Argon2 && make && mv libargon2.a .. && make clean && cd ..
+gcc -Os -Wall -o pqp pqpcs_src.c libargon2.a -pthread -lssl -lcrypto -lbsd
+gcc -Os -Wall -o pqp_proxy pqpcs_proxy.c libargon2.a -pthread -lssl -lcrypto -lbsd
+
+if you have any error about libbsd not found use `pkg-config --libs libbsd` at the end of the compiling command
+
+or if you compile with other compiler include thread,ssl,crypto,bsd libraries
+
+|> 7- Create these directories :
+mkdir [/path/to/matrice/matrice]
+mkdir [/path/to/matrice_net/matrice_net]
+mkdir [/path/to/table/table]
+mkdir [/path/to/pqpcs_recv_dir/pqpcs_recv_dir]
+
+|> 8- Export environment variable :
+export PQPCONF=[/path/to/pqpcs_conf_dir/pqpcs_conf_dir] >> [bashrc_dir/.bashrc]
+export PQPRECVDIR=[/path/to/pqpcs_recv_dir/pqpcs_recv_dir] >> [bashrc_dir/.bashrc]
+
+|> 9- Write pqpcsconf..."
+echo "256 8 1 [/path/to/matrice/matrice] [/path/to/matrice_net/matrice_net] [/path/to/table/table]" > /path/to/conf_dir/conf_dir/pqpcsconf
+echo "// number of round to blend matrice // password lentgh // number of ip in list (to use)" >> /path/to/conf_dir/conf_dir/pqpcsconf
+echo "// path to matrice // path to matrice_net // path to table" >> /path/to/conf_dir/conf_dir/pqpcsconf
+echo "*EDIT THIS FILE AT YOUR OWN RISK*" >> /path/to/conf_dir/conf_dir/pqpcsconf
+
+|> 10- Create ip_list with script in IP_COMPLETION dir
+
+It's finish enjoy ;) : if you create a good script for your distro or O.S send at TrEeSr00t@protonmail.com
+
