@@ -1,0 +1,56 @@
+WELCOME ON PQPCS !!
+LINUX or *BSD ONLY, work in progress for windows !
+
+This is the master directory of PQP cryptographic system.
+
+INSTALLATION :
+
+   |-> Install libs and softwares which are in requirments;
+   |-> Go to INSTALL directory and run install.sh and follow instructions;
+   |-> *.desktop files are in /usr/share/applications ;
+   |-> Read the DIRECTORY AND TREE section (advice);
+   |-> Give your return at autor at : TrEeSr00t@protonmail.com if you want ;) ;
+
+/!\ For developpers : there are in INSTALL directory all *.h files and source code of PQPCS. It exists test.txt to test your configuration
+if you want. You can use *.sh files in MAT&TAB_GEN to test matrice and table creation ***but it shouldn't be used with pqpcs basic
+program !***. Read DIRECTORY AND TREE section below (manual_dev too). ALL GOOD MODIFICATIONS WILL PUBLISHED IN OTHER_PUBLICATION IF
+YOU SEND YOUR PROJECT AT : TrEeSr00t@protonmail.com
+
+
+DIRECTORY AND TREE :
+
+Changelog is the evolution of PQP version
+
+README this text !
+
+requirments all additional software to use PQPCS.
+
+INSTALL directory is the source code to install pqpcs.
+   |-> pqpcs.sh bash sript which support all mode of pqpcs.
+   |-> pqpcs.h all function for external use (if you develop with this system).
+   |-> install.sh bash script to install and configure pqpcs.
+   |-> pqpcs_src.c source code for PQPCS (a software that use PQP function).
+   |-> pqpcs_proxy.c source code for PQPCS proxy (warning it's a binary proxy with nothing protocol method).
+
+IP_COMPLETION directory to help user to complete one's ip addresses to use PQPCS
+   |-> ip_search.sh bash script to search and complete pqp ip_list.
+   |-> netmask_addr text file with all possible mask for IPV4 addresses.
+
+HEXCHAT directory about PQPCS-IRC server utilisation, only for LINUX WITH IPTABLES.
+   |-> hexchat_pqp.sh script to configure hexchat and computer with PQPCS-PROXY.
+   |-> README to warn you about the utilisation of scripts.
+   |-> servlist.conf the lines to configure hexchat (connexion at PQPCS-IRC server).
+
+Note : To use proxy with http/socks apps use port forwarding as is (if you use iptables and hexchat) :
+	
+	hexchat_port=`sudo netstat -ntp | grep hexchat | cut -d' ' -f33 | cut -d'/' -f1`
+	sudo iptables -t nat -A PREROUTING -p tcp --dport $hexchat_port -j REDIRECT --to-ports 2061
+
+MAT&TAB_GEN directory for Matrice and Table generation
+   |-> GEN_MAT.c Matrice generation source code ( /!\ Matrice not blended or encrypted ).
+   |-> GEN_TABLE.c Table generation source code ( /!\ Table not encrypted );
+   |-> MAT_GEN.sh bash script to manage GEN_MAT and GEN_TABLE.
+ 
+Any question ? Contact : TrEeSr00t@protonmail.com
+
+Enjoy and modify as you want (but please if it's good contact me ;)

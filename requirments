@@ -1,0 +1,13 @@
+libbsd-dev # [OBVIOUS] for arc4random C function
+netdiscover # [OPTIONAL] if you want use netdiscover to complete ip list !
+libssl # [OBVIOUS] for hash commands! 
+
+Example : 
+
+For Ubuntu : 
+
+sudo apt install libbsd-dev libssl-dev
+
+and if you want :
+
+sudo apt install netdiscover

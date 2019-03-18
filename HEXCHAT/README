@@ -1,0 +1,7 @@
+WELCOME ON PQPCS !
+
+This is the readme about the utilisation of pqpcs proxy with hexchat for linux !
+LINUX WITH IPTABLES ONLY !!!
+
+First : copy ***lines*** of servlist.conf into your ~/.config/hexchat/servlist.conf (at the begining after v=X.y.z).
+Second : use hexchat_pqp.sh in substition of the traditional hexchat (this script run automaticaly hexchat on server PQPCS-IRC and configure iptables with port forwarding see README at master directory).

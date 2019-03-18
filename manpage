@@ -1,0 +1,46 @@
+.TH pqp 1 "November 20, 2017" "pqp"
+
+.SH NAME
+pqp \- program to manage and use pqpcs.
+
+.SH SYNOPSIS
+.B pqp
+.RI OPTIONS
+.br
+
+.SH DESCRIPTION
+.B pqp
+is a command line tool wich provide an interface for pqp cryptographic system. For a user-friendly
+utilisation use pqpcs.sh. 
+.PP
+\fBpqp\fP is a high level interface ; for development you must use low level API at pqpcs(3)
+
+.SH OPTIONS
+.B encrypt 
+options
+.PP
+pqp encrypt 0 - to encrypt a file localy. You must provide a matrice password and a file password.
+.PP
+pqp encrypt 1 - to  encrypt a file with a remote matrice. You must provide a file password.
+.PP
+pqp encrypt 2 - to run the daemon which provide matrice.
+.PP
+.B decrypt 
+options
+.PP
+pqp decrypt 0 - to decrypt a file localy. You must provide a matrice password and a file password.
+.PP
+pqp decrypt 1 - to  decrypt a file with a remote matrice. You must provide a file password.
+.PP
+pqp decrypt 2 
+.PP
+	pqp decrypt 2 1
+.PP
+	pqp decrypt 2 2
+
+.SH FILES
+
+.SH "SEE ALSO"
+
+
+

@@ -1,0 +1,10 @@
+2017-03-24  TreesRoot  <TrEeSr00t@protonmail.com>
+
+ * Release 1_Alpha : Non publié, ébauche seulement (cryptage local uniquement);
+ * Release 2_Alpha : Non publié, ébauche seulement (travail sur la partie net);
+ * Release 3_Alpha : Non publié, fonctionnel pas de chat ni de fonction recursive;
+ * Release 4_unstable : Non publié, fonctionnel pour tout les modes + ajouts de la fonction bridge;
+ * Release 5_stable : Non publié, entièrement fonctionnel portabilité des fonctions dans pqpcs.h, simplification du code et commentaire;
+ * Release 6.1_unstable : Publié création de pqpcs_proxy (version 1), création d'un script afin de créer des matrices ou tables;
+ * Release 6.2_unstable : Publié travail sur la partie assymétrique, ajout de la partie assymétrique dans le proxy;
+ * Release 7_unstable : Publié correction partie assymétrique, correction de la taille du mot de passe automatique et resolution table non chiffrée, ajouter des commentaires, correction proxy, correction bugs;
